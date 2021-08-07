@@ -5,7 +5,7 @@
 
 ### Iniciando cliente-server:
  - Executar no console `npm start`
- - Vai abrir na rota : localhost:4000
+ - Vai abrir na rota : localhost:3000
 ### Iniciando server-RESTful:
  - Executar no console `nodemon index`
-- Vai abrir na rota : localhost:3000
+- Vai abrir na rota : localhost:4000
