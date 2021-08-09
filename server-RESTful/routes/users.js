@@ -30,8 +30,8 @@ module.exports = (app) => {
 
   router.post(
     [
-      check("name", "O nome é obrigatório.").notEmpty(),
-      check("email", "Email inválido.").notEmpty().isEmail(),
+      check("_name", "O nome é obrigatório.").notEmpty(),
+      check("_email", "Email inválido.").notEmpty().isEmail(),
     ],
     (req, res) => {
       let errors = validationResult(req);
@@ -66,8 +66,8 @@ module.exports = (app) => {
   });
 
   routerId.put([
-    check("name", "O nome é obrigatório.").notEmpty(),
-    check("email", "Email inválido.").notEmpty().isEmail(),
+    check("_name", "O nome é obrigatório.").notEmpty(),
+    check("_email", "Email inválido.").notEmpty().isEmail(),
   ],
   (req, res) => {
     let errors = validationResult(req);
