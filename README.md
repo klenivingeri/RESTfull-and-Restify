@@ -148,20 +148,58 @@ static get(url, params = {}){
   } //post
 ~~~
 
+Criando os method put, delete e post em routes users.
+~~~javascript
+ //routes/users.js
+ 
+router.get('/:id', function(req, res, next) { 
+  client.get(`/users/${req.params.id}`,(err, request, response, obj) =>{
+    assert.ifError(err);
+
+    res.json(obj)
+
+  })
+
+});
+
+router.put('/:id', function(req, res, next) { 
+  client.put(`/users/${req.params.id}`, req.body, (err, request, response, obj) =>{
+    assert.ifError(err);
+
+    res.json(obj)
+
+  })
+
+});
+
+router.delete('/:id', function(req, res, next) { 
+  client.del(`/users/${req.params.id}`,(err, request, response, obj) =>{
+    assert.ifError(err);
+
+    res.json(obj)
+
+  })
+
+});
+
+router.post('/', function(req, res, next) { 
+  client.post(`/users`, req.body, (err, request, response, obj) =>{
+    assert.ifError(err);
+
+    res.json(obj)
+
+  })
+
+});
+~~~
+
 ~~~javascript
 ~~~
 
 ### Server-restApi
-=======
-# Cliente server e server RESTfull
 
- - cliente-server: Todos os arquivos relacionado ao fron-end
- - server-RESTful:  Todos os arquivos relacionado ao back-end
 
-### Iniciando cliente-server:
- - Executar no console `npm start`
- - Vai abrir na rota : localhost:3000
-### Iniciando server-RESTful:
- - Executar no console `nodemon index`
-- Vai abrir na rota : localhost:4000
 
+
+## Dicas
+- Static -  A class não precisa ser estanciada para chamar o method
