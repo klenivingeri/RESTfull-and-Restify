@@ -4,8 +4,8 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended:false }));
-app.use(bodyParser.json()); // recebe o dados em json
+app.use(bodyParser.urlencoded({ extended:false, limit: '50mb' }));
+app.use(bodyParser.json({limit: '50mb'})); // recebe o dados em json
 
 consign().include('routes').include('utils').into(app);
 //Consign vai incluir a pasta routes e utils dentro do nosso app

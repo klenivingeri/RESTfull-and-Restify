@@ -28,6 +28,7 @@ class HttpRequest{
       }
       ajax.onload = event =>{      
         let obj = {}  
+
         try{
           obj = JSON.parse(ajax.responseText)
         } catch(e) {
@@ -36,7 +37,8 @@ class HttpRequest{
         }
         resolve(obj);
       };
-      ajax.send();
+      ajax.setRequestHeader('Content-type', 'application/json');
+      ajax.send(JSON.stringify(params));
       })
   }
 }
